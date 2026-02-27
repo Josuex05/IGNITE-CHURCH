@@ -1,0 +1,70 @@
+body {
+  background-color: #f3f3f3; /* Grey background */
+  color: #1e88e5; /* Blue text */
+  font-family: sans-serif; /* Use a friendly font */
+  margin: 0;
+  padding: 0;
+}
+
+h1, h2 {
+  margin: 1em 0; /* Add some space around headings */
+}
+
+nav a {
+  display: inline-block; /* Display navigation links horizontally */
+  padding: 10px; /* Add some padding for visual separation */
+  text-decoration: none; /* Remove underline from links */
+  color: #1e88e5; /* Same blue color as text */
+}
+
+nav a:hover {
+  background-color: #ddd; /* Subtle hover effect */
+}
+
+hr {
+  border: 1px solid #ddd; /* Thin grey line separating sections */
+  margin: 1em 0;
+}
+
+img {
+  max-width: 100%; /* Ensure images don't overflow their container */
+  margin: 1em 0; /* Add some space around images */
+}
+
+.contact-form label {
+  display: block; /* Align labels next to input fields */
+  margin-bottom: 5px;
+}
+
+.contact-form input, textarea {
+  display: block;
+  width: 100%; /* Make input fields fill the available space */
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px; /* Add subtle rounded corners */
+}
+
+.contact-form button {
+  background-color: #1e88e5; /* Use the same blue for the button */
+  color: #fff; /* White text for good contrast */
+  padding: 10px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.contact-form button:hover {
+  background-color: #0d67c2; /* Darken the blue on hover */
+}
+
+/* Adjust styles for each page if needed (optional) */
+
+.events-page img {
+  /* Apply specific styling to events page image */
+}
+
+.contact-page form {
+  /* Apply specific styling to Contact page form */
+}
+
+/* You can add more styles for different elements as needed */
