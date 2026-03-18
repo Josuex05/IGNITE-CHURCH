@@ -9,8 +9,15 @@
    <link rel="stylesheet" href="css\styles.css">
 </head>
 <body>
-    <header>
-        <h1>IGNITE CHURCH</h1>
+    <header class="header">
+    
+        <div class="header-inner">
+        
+            <!-- LOGO + TITLE + NAV -->
+        <a href ="index.html" class="logo">
+            <img src="images/ignite_church_transparent.png" alt="MySite Logo">
+        </a>
+        </div>
         <nav>
             <a href="welcome.html">WELCOME HOME</a>
             <a href="our_story.html">OUR STORY</a>
@@ -19,19 +26,57 @@
             <a href="give.html">GIVE</a>
             <a href="contact.html">CONTACT US</a>
         </nav>
-        <hr>
+      
+          <hr>
     </header>
-    <main>
-        <h2>Welcome to MySite!</h2>
-        <p>This is the home page of my website.</p>
-        <ul>
-            <li>Here are some of the things you'll find here:</li>
-            <li>Information about our events</li>
-            <li>A way to contact us</li>
-        </ul>
-        <p><strong>Bold text</strong>, <em>italic text</em>, <u>underlined text</u></p>
-        <img src="images/imageA.jpg" alt="Home page image">
-        <p><a href="https://www.example.com">Visit an external site</a></p>
-    </main>
+
+<main class="container">
+
+<div class="grid">
+<div class="left">
+
+            <section class="card">
+          <h2>Welcome Home</h2>
+          <p>At Ignite we like to say "Welcome Home"!
+            We seek to encounter the presence of Jesus.
+            We strive to know the person of Jesus.</p>
+        </section>
+
+        <section class="card">
+          <h3>Time + Location</h3>
+          <p>Sunday's at 11 am  |  Upper Level
+        1100 McCarter Hwy Newark, NJ 07102
+        Parking entrance at the Fuel4 gas station</p>
+        </section>
+
+        <section class="card">
+          <h3>Stay Connected</h3>
+          <p>Not able to come to Ignite?  No worries!
+    Watch our live services on our Youtube page.
+    Click below to keep up with the Ignite fam.</p>
+          <div class="icons">
+            <span>FB</span>
+            <span>YT</span>
+            <span>IG</span>
+</div>
+        </section>
+</div>
+      <!-- RIGHT COLUMN -->
+      <div class="right">
+
+        <section class="card large">
+          <h2>Featured / Slider</h2>
+        </section>
+
+        <section class="card large">
+          <h2>Media / Content</h2>
+        </section>
+
+      </div>
+
+    </div>
+
+  </main>
+
 </body>
 </html>

@@ -1,70 +1,219 @@
-body {
-  background-color: #f3f3f3; /* Grey background */
-  color: #1e88e5; /* Blue text */
-  font-family: sans-serif; /* Use a friendly font */
+/* =========================
+   RESET (fix browser defaults)
+========================= */
+
+/* Removes default spacing and ensures consistent sizing */
+* {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 
-h1, h2 {
-  margin: 1em 0; /* Add some space around headings */
+/* =========================
+   BODY (global styles)
+========================= */
+
+body {
+  background-color: #f3f3f3; /* Light grey background */
+  color: #000000; /* Default text color */
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
 }
 
+/* =========================
+   HEADER / NAVBAR
+========================= */
+
+/* Main header container */
+.header {
+  background: white; /* White background */
+  border-bottom: 2px solid #ddd; /* Thin line under header */
+}
+
+/* Inner header (logo area) */
+.header-inner {
+  display: flex; /* Places items in a row */
+  align-items: center; /* Vertically center logo */
+  padding: 15px 40px; /* Space inside header */
+}
+
+/* Logo image size */
+.logo img {
+  height: 50px; /* Controls logo height */
+}
+
+/* NAVIGATION BAR */
+nav {
+  display: flex; /* Makes links horizontal */
+  justify-content: center; /* Centers nav links */
+  gap: 25px; /* Space between links */
+  padding-bottom: 10px;
+}
+
+/* Individual nav links */
 nav a {
-  display: inline-block; /* Display navigation links horizontally */
-  padding: 10px; /* Add some padding for visual separation */
-  text-decoration: none; /* Remove underline from links */
-  color: #1e88e5; /* Same blue color as text */
+  text-decoration: none; /* Removes underline */
+  color: #d60202; /* Red color */
+  padding: 8px 12px; /* Clickable space */
+  border-radius: 6px; /* Rounded corners */
+  font-weight: 500;
 }
 
+/* Hover effect for nav links */
 nav a:hover {
-  background-color: #ddd; /* Subtle hover effect */
+  background-color: #ddd; /* Light grey highlight */
 }
 
+/* =========================
+   TYPOGRAPHY (text styling)
+========================= */
+
+h1 {
+  color: #d60202; /* Red heading */
+  margin: 1em 0; /* Space above and below */
+}
+
+h2, h3 {
+  margin-bottom: 10px; /* Space below headings */
+}
+
+/* =========================
+   MAIN PAGE CONTAINER
+========================= */
+
+/* Centers content and limits width */
+.container {
+  max-width: 1200px; /* Prevents stretching too wide */
+  margin: 0 auto; /* Centers horizontally */
+  padding: 30px; /* Space inside container */
+}
+
+/* =========================
+   GRID LAYOUT (MAIN STRUCTURE)
+========================= */
+
+/* Creates 2-column layout */
+.grid {
+  display: grid;
+
+  /* Left column smaller (1 part), right bigger (2 parts) */
+  grid-template-columns: 1fr 2fr;
+
+  gap: 25px; /* Space between columns */
+}
+
+/* LEFT COLUMN (stacked boxes) */
+.left {
+  display: flex;
+  flex-direction: column; /* Stack vertically */
+  gap: 25px; /* Space between sections */
+}
+
+/* RIGHT COLUMN (stacked boxes) */
+.right {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+/* =========================
+   CARDS (YOUR DRAWN BOXES)
+========================= */
+
+/* Each content box */
+.card {
+  background: white; /* White box */
+  padding: 20px; /* Space inside */
+  border-radius: 10px; /* Rounded edges */
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1); /* Soft shadow */
+  min-height: 120px; /* Minimum height */
+}
+
+/* Larger content boxes (right side) */
+.large {
+  min-height: 250px; /* Makes these taller */
+}
+
+/* =========================
+   SOCIAL ICONS SECTION
+========================= */
+
+/* Layout for FB / YT / IG icons */
+.icons {
+  display: flex; /* Horizontal layout */
+  gap: 15px; /* Space between icons */
+  margin-top: 10px;
+}
+
+/* =========================
+   GENERAL ELEMENTS
+========================= */
+
+/* Horizontal line styling */
 hr {
-  border: 1px solid #ddd; /* Thin grey line separating sections */
-  margin: 1em 0;
+  border: 1px solid #ddd;
+  margin: 10px 0;
 }
 
+/* Images responsive */
 img {
-  max-width: 100%; /* Ensure images don't overflow their container */
-  margin: 1em 0; /* Add some space around images */
+  max-width: 100%; /* Prevent overflow */
 }
 
+/* =========================
+   CONTACT FORM (your original)
+========================= */
+
+/* Label above inputs */
 .contact-form label {
-  display: block; /* Align labels next to input fields */
+  display: block;
   margin-bottom: 5px;
 }
 
-.contact-form input, textarea {
+/* Input fields */
+.contact-form input,
+.contact-form textarea {
   display: block;
-  width: 100%; /* Make input fields fill the available space */
+  width: 100%; /* Full width */
   padding: 10px;
   border: 1px solid #ddd;
-  border-radius: 4px; /* Add subtle rounded corners */
+  border-radius: 4px;
 }
 
+/* Submit button */
 .contact-form button {
-  background-color: #1e88e5; /* Use the same blue for the button */
-  color: #fff; /* White text for good contrast */
+  background-color: #000000;
+  color: #fff;
   padding: 10px;
   border: none;
   border-radius: 4px;
   cursor: pointer;
 }
 
+/* Button hover */
 .contact-form button:hover {
-  background-color: #0d67c2; /* Darken the blue on hover */
+  background-color: #333;
 }
 
-/* Adjust styles for each page if needed (optional) */
+/* =========================
+   RESPONSIVE DESIGN (MOBILE)
+========================= */
 
-.events-page img {
-  /* Apply specific styling to events page image */
+/* When screen is small (phone) */
+@media (max-width: 768px) {
+
+  /* Stack columns into 1 */
+  .grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* Wrap nav links if needed */
+  nav {
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  /* Center logo on mobile */
+  .header-inner {
+    justify-content: center;
+  }
 }
-
-.contact-page form {
-  /* Apply specific styling to Contact page form */
-}
-
-/* You can add more styles for different elements as needed */
