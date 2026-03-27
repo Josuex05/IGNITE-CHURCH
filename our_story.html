@@ -38,7 +38,7 @@
                 <!-- TESTIMONIALS -->
 
     <section class ="testimony-section">
-        <h1>Our Story</h1>
+        <h1>OUR STORY</h1>
     <div class="story-slider">
 
     <button class="arrow left">&#10094;</button>
@@ -50,16 +50,35 @@
         <img src="images/pastor_carousel.png">
         <div class="story-content">
             <h2>Pastor Jorge</h2>
-            <p>Testimonial content goes here.</p>
+            <h3>Senior Pastor</h3>
+            <p>Jorge Caban is the Senior pastor of Ignite Church in 
+                Newark, New Jersey.  Pastor Jorge started off with 
+                a youth movement called Ignite Revolution in 2011 where 
+                over 1,000 youth would come to encounter Christ every month.
+                  Two years later Ignite Church was birthed.  
+                  Pastor Jorge along with his wife, Zulma, 
+                  have used their testimonies to change the lives of so 
+                  many people at Ignite.  They have cultivated a culture of love 
+                  and compassion for the community around them.  Pastor Jorge also 
+                  attended Grace Hill Bible College where he received his degree in 
+                  Theology.  Pastor Jorge is also a father of 2, Sergio and Elleniz. </p>
         </div>
     </div>
                        <!-- Pastor P -->
 
 <div class="story-card next">
-    <img src="images/pastor p.png">
+    <img src="images/pastor ed.png">
     <div class="story-content">
-        <h2>Pastor P</h2>
-        <p>Testimonial content goes here.</p>
+        <h2>Ed and Alice Padilla</h2>
+        <h3>Associate Pastor</h3>
+        <p>Ed and Alice have been serving with Ignite Church for the last 6 years.
+              Just last year, in 2018, they were recognized as the Associate Pastors 
+              of the house as well. They help run our Connect Team and our iGroup teams. 
+               They also have taken their 24 years of marriage and helped put together 
+               our Marriage Ministry, helping couples learn different ways to keep 
+               Jesus at the center of their marriages.  They have been rocks for our
+                Senior Pastors to lean on since the very beginning.  Their goal is to
+                 help push Ignite Church to reaching its full potential.</p>
   </div>
 </div>
 
@@ -69,7 +88,12 @@
     <img src="images/mike.png">
     <div class="story-content">
         <h2>Mike</h2>
-        <p>Testimonial content goes here.</p>
+        <h3>Worship Director</h3>
+        <p>Mike has been with Ignite Church since it's opening service in January of 2013.  
+            He has taken on the responsibility of being our Worship Director.  
+            His goal is to help the people of our church connect with God through music.  
+            Mike focuses on bringing an understanding of what worship is and why it is important.  
+            Mike also helps produce and write music for Ignite Live.</p>
   </div>
 </div>
 
@@ -78,5 +102,40 @@
 </div>
     </section>
 
+<script>
+const cards = document.querySelectorAll(".story-card");
+const nextBtn = document.querySelector(".arrow.right");
+const prevBtn = document.querySelector(".arrow.left");
+
+let index = 0;
+
+function updateCards() {
+  cards.forEach(card => {
+    card.classList.remove("active", "prev", "next");
+  });
+
+  cards[index].classList.add("active");
+
+  let prev = (index - 1 + cards.length) % cards.length;
+  let next = (index + 1) % cards.length;
+
+  cards[prev].classList.add("prev");
+  cards[next].classList.add("next");
+}
+
+nextBtn.addEventListener("click", () => {
+  index = (index + 1) % cards.length;
+  updateCards();
+});
+
+prevBtn.addEventListener("click", () => {
+  index = (index - 1 + cards.length) % cards.length;
+  updateCards();
+});
+
+updateCards();
+</script>
+
+</body>
 
 
