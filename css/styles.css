@@ -518,3 +518,85 @@ img {
   }
   .fire-glow { opacity: 0.8; }
 }
+
+/* =========================================
+   DARK THEME (black + red)
+   Placed last so it overrides the light colors above
+========================================= */
+
+:root { color-scheme: dark; }
+
+/* PAGE BACKGROUND: black with a red glow behind the content */
+body {
+  color: #f2f2f2;
+  background:
+    radial-gradient(ellipse 70% 60% at 50% 38%,
+      rgba(190, 20, 30, 0.55) 0%,
+      rgba(90, 0, 8, 0.35) 40%,
+      rgba(0, 0, 0, 0) 75%),
+    #000;
+  background-attachment: fixed;
+  min-height: 100vh;
+}
+
+/* HEADER + NAV */
+.header {
+  background: #111;
+  border-bottom: 1px solid #2b2b2b;
+}
+nav a {
+  color: #fff;
+  font-size: 0.85rem;
+  letter-spacing: 0.02em;
+  border-radius: 0;
+  border-bottom: 3px solid transparent;
+}
+nav a:hover {
+  background-color: rgba(255, 255, 255, 0.07);
+  border-bottom-color: #d0202a;
+}
+hr { border-color: #2b2b2b; }
+
+/* LOGO: turn the dark letters white (flame circle stays red) */
+.animated-logo .logo-ignite,
+.animated-logo .logo-church {
+  filter: brightness(0) invert(1);
+}
+
+/* HEADINGS */
+h1 { color: #ff4a4a; }
+.testimony-section h1 { color: #ff4a4a; }
+
+/* CARDS: dark glass look */
+.card {
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5);
+  color: #f2f2f2;
+}
+.card h3 { color: #fff; }
+
+/* SOCIAL ICONS: black icons become white */
+.icons img { filter: invert(1); }
+
+/* MINI CARDS */
+.mini-card {
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.6);
+}
+
+/* STORY CARDS (Our Story page) */
+.story-card {
+  background: #1a1a1a;
+  color: #f2f2f2;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.7);
+}
+.story-content h2 { color: #ff4a4a; }
+
+/* CONTACT FORM */
+.contact-form input,
+.contact-form textarea {
+  background: #151515;
+  color: #fff;
+  border: 1px solid #333;
+}
