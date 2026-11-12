@@ -437,3 +437,84 @@ img {
     justify-content: center;
   }
 }
+
+
+/* ===== ANIMATED LOGO (home page only) ===== */
+.animated-logo {
+  display: flex;
+  align-items: center;
+}
+.animated-logo .logo-part { height: 50px; display: block; }
+
+/* IGNITE: typed in, 6 steps = 6 letters */
+.logo-ignite {
+  clip-path: inset(0 100% 0 0);
+  animation: type-in 0.9s steps(6, end) 0.3s forwards;
+}
+
+/* CHURCH: typed in after the flame lights */
+.logo-church {
+  clip-path: inset(0 100% 0 0);
+  animation: type-in 0.9s steps(6, end) 2.2s forwards;
+}
+
+@keyframes type-in {
+  to { clip-path: inset(0 0 0 0); }
+}
+
+/* FLAME */
+.logo-flame-wrap {
+  position: relative;
+  display: block;
+  height: 50px;
+}
+.logo-flame {
+  position: relative;
+  z-index: 2;
+  opacity: 0;
+  transform: scale(0.4);
+  transform-origin: 50% 80%;
+  animation:
+    flame-ignite 0.9s ease-out 1.3s forwards,
+    flame-flicker 1.6s ease-in-out 2.2s 2;
+}
+.fire-glow {
+  position: absolute;
+  z-index: 1;
+  left: 30%; right: 30%; top: 15%; bottom: 10%;
+  background: radial-gradient(circle, #fff6c2 0%, #ffb02e 35%, #ff5a1f 70%, transparent 100%);
+  border-radius: 50%;
+  opacity: 0;
+  filter: blur(3px);
+  animation:
+    glow-up 0.9s ease-out 1.3s forwards,
+    glow-flicker 0.5s ease-in-out 2.2s 6 alternate;
+}
+
+@keyframes flame-ignite {
+  0%   { opacity: 0; transform: scale(0.4); filter: brightness(2); }
+  60%  { opacity: 1; transform: scale(1.12); }
+  100% { opacity: 1; transform: scale(1); filter: brightness(1); }
+}
+@keyframes flame-flicker {
+  0%, 100% { transform: scale(1); }
+  50%      { transform: scale(1.04); }
+}
+@keyframes glow-up {
+  to { opacity: 1; }
+}
+@keyframes glow-flicker {
+  from { transform: scale(0.92); opacity: 0.85; }
+  to   { transform: scale(1.1);  opacity: 1; }
+}
+
+/* Respect people who turn off motion in their device settings */
+@media (prefers-reduced-motion: reduce) {
+  .logo-ignite, .logo-church, .logo-flame, .fire-glow {
+    animation: none;
+    clip-path: none;
+    opacity: 1;
+    transform: none;
+  }
+  .fire-glow { opacity: 0.8; }
+}
