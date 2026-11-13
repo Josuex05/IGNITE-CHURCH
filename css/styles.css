@@ -629,3 +629,58 @@ nav a {
 .header {
   border-bottom-width: 1px; /* was 2px */
 }
+
+/* =========================================
+   ENTRANCE ANIMATIONS (play once on page load)
+========================================= */
+@keyframes slide-in-left {
+  from { opacity: 0; transform: translateX(-90px); }
+  to   { opacity: 1; transform: none; }
+}
+@keyframes slide-in-right {
+  from { opacity: 0; transform: translateX(90px); }
+  to   { opacity: 1; transform: none; }
+}
+@keyframes slide-in-top {
+  from { opacity: 0; transform: translateY(-40px); }
+  to   { opacity: 1; transform: none; }
+}
+@keyframes pop-up-bottom {
+  from { opacity: 0; transform: translateY(80px) scale(0.9); }
+  to   { opacity: 1; transform: none; }
+}
+
+/* nav drops in from the top (home page only) */
+body:has(.card-row) nav {
+  animation: slide-in-top 0.7s ease-out 0.2s backwards;
+}
+
+/* left cards slide in from the left, one after another */
+.left .card {
+  animation: slide-in-left 0.8s cubic-bezier(0.2, 0.8, 0.2, 1) backwards;
+}
+.left .card:nth-of-type(1) { animation-delay: 0.3s; }
+.left .card:nth-of-type(2) { animation-delay: 0.5s; }
+.left .card:nth-of-type(3) { animation-delay: 0.7s; }
+
+/* big photo carousel slides in from the right */
+.right .card {
+  animation: slide-in-right 0.9s cubic-bezier(0.2, 0.8, 0.2, 1) 0.5s backwards;
+}
+
+/* program cards rise up from the bottom, one by one */
+.mini-card {
+  animation: pop-up-bottom 0.8s cubic-bezier(0.2, 0.8, 0.2, 1) backwards;
+}
+.card-row .mini-card:nth-child(1) { animation-delay: 1.0s; }
+.card-row .mini-card:nth-child(2) { animation-delay: 1.15s; }
+.card-row .mini-card:nth-child(3) { animation-delay: 1.3s; }
+.card-row .mini-card:nth-child(4) { animation-delay: 1.45s; }
+
+/* skip all of this for people who turned off motion on their device */
+@media (prefers-reduced-motion: reduce) {
+  body:has(.card-row) nav,
+  .left .card,
+  .right .card,
+  .mini-card { animation: none; }
+}
