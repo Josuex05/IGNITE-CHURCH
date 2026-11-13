@@ -600,3 +600,32 @@ h1 { color: #ff4a4a; }
   color: #fff;
   border: 1px solid #333;
 }
+
+/* =========================================
+   COMPACT HEADER
+   Placed last so it overrides the earlier header sizes
+========================================= */
+.header-inner {
+  padding: 6px 40px 0;      /* was 15px 40px */
+}
+.logo img,
+.animated-logo .logo-part {
+  height: 34px;             /* was 50px: logo size */
+}
+.logo-flame-wrap {
+  height: 34px;             /* keep the flame the same height as the logo */
+}
+nav {
+  gap: 14px;                /* was 25px */
+  padding-bottom: 0;        /* was 10px */
+}
+nav a {
+  padding: 6px 10px;        /* was 8px 12px */
+  font-size: 0.8rem;
+}
+.header hr {
+  display: none;            /* removes the extra divider line and its gap */
+}
+.header {
+  border-bottom-width: 1px; /* was 2px */
+}
