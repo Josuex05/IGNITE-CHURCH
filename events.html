@@ -3,28 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>IGNITE CHURCH</title>
-    <meta name="description" content="This is the home page of MySite.">
-    <meta name="keywords" content="mysite, home, events, contact">
-   <link rel="stylesheet" href="css/styles.css">
+    <title>Events | Ignite Church</title>
+    <meta name="description" content="Upcoming events and the full calendar for Ignite Church in Newark, NJ.">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/events.css">
 </head>
-<body>
-            <!-- HEADER -->
+<body class="events-page">
 
-
+    <!-- HEADER -->
     <header class="header">
-    
         <div class="header-inner">
-        
-            <!-- LOGO + TITLE + NAV -->
-        <a href="index.html" class="logo animated-logo" aria-label="Ignite Church home">
-    <img class="logo-part logo-ignite" src="images/logo-ignite.png" alt="">
-    <span class="logo-flame-wrap">
-        <span class="fire-glow"></span>
-        <img class="logo-part logo-flame" src="images/logo-flame.png" alt="">
-    </span>
-    <img class="logo-part logo-church" src="images/logo-church.png" alt="">
-</a>
+            <a href="index.html" class="logo animated-logo" aria-label="Ignite Church home">
+                <img class="logo-part logo-ignite" src="images/logo-ignite.png" alt="">
+                <span class="logo-flame-wrap">
+                    <span class="fire-glow"></span>
+                    <img class="logo-part logo-flame" src="images/logo-flame.png" alt="">
+                </span>
+                <img class="logo-part logo-church" src="images/logo-church.png" alt="">
+            </a>
         </div>
         <nav>
             <a href="index.html">WELCOME HOME</a>
@@ -34,34 +30,68 @@
             <a href="give.html">GIVE</a>
             <a href="contact.html">CONTACT US</a>
         </nav>
-      
-          <hr>
+        <hr>
     </header>
-    <main>
-        <h2>Our events</h2>
 
-<main class ="container">
-       <!--LEFT COLUMN-->
-<div class="grid">
-<div class="left">
-        <section class="card">
-          <h3>CALENDAR</h3>
-        </section>
+    <main class="events-main">
 
-<div class ="right"> 
-<section class="card large">
-            <div class="carousel">
-              <div class="slides">
-                <img src="images/pastor_carousel.png" class="slide active">
-                <img src="images/carousel 2.png" class="slide">
-                <img src="images/carousel 3.png" class="slide">
-              </div>
-              <button class="prev">&#10094;</button>
-              <button class="next">&#10095;</button>
+        <div class="events-head">
+            <h1>Our Events</h1>
+            <p>See what is coming up at Ignite and find a way to get connected.</p>
+        </div>
+
+        <!-- Shown only while sample data is in use -->
+        <p class="sample-note" id="sampleNote" hidden>Preview: these are sample events for the design. Real events will replace them.</p>
+
+        <div class="events-layout">
+
+            <!-- LEFT COLUMN -->
+            <div class="ev-left">
+
+                <section class="glass ev-upcoming" aria-label="Upcoming events">
+                    <h2 class="ev-title">UPCOMING EVENTS</h2>
+                    <div class="up-viewport">
+                        <div class="up-track" id="upTrack"></div>
+                    </div>
+                    <div class="up-dots" id="upDots" role="tablist" aria-label="Choose a featured event"></div>
+                </section>
+
+                <section class="glass ev-photos" aria-label="Photos from Ignite">
+                    <div class="photo-frame" id="photoFrame">
+                        <button class="photo-btn photo-prev" id="photoPrev" aria-label="Previous photo">&#10094;</button>
+                        <button class="photo-btn photo-next" id="photoNext" aria-label="Next photo">&#10095;</button>
+                    </div>
+                </section>
+
             </div>
-          </section>
 
-</div>
+            <!-- CALENDAR -->
+            <section class="glass ev-calendar" aria-label="Events calendar">
+                <div class="cal-main">
+                    <h2 class="cal-title">EVENTS CALENDAR</h2>
+                    <div class="cal-bar">
+                        <div class="cal-month" id="calMonth" aria-live="polite"></div>
+                        <div class="cal-nav">
+                            <button id="calPrev" aria-label="Previous month">&#10094;</button>
+                            <button id="calNext" aria-label="Next month">&#10095;</button>
+                        </div>
+                    </div>
+                    <div class="cal-dow" aria-hidden="true">
+                        <span>Sunday</span><span>Monday</span><span>Tuesday</span><span>Wednesday</span><span>Thursday</span><span>Friday</span><span>Saturday</span>
+                    </div>
+                    <div class="cal-grid" id="calGrid"></div>
+                </div>
 
+                <aside class="cal-side" aria-live="polite">
+                    <h3 id="sideTitle">TODAY'S EVENTS</h3>
+                    <ul class="side-list" id="sideList"></ul>
+                </aside>
+            </section>
+
+        </div>
+    </main>
+
+    <script src="js/events-data.js"></script>
+    <script src="js/events.js"></script>
 </body>
 </html>
