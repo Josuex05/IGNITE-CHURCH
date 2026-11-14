@@ -24,7 +24,7 @@ window.IGNITE_EVENTS_SAMPLE = false;
 window.IGNITE_EVENTS = [
   { id: 'sunday', title: 'Sunday Service',
     start: '2026-01-04T10:30', repeat: 'weekly',
-    featured: true, image: 'images/map_church' },
+    featured: true, image: 'images/map_church.webp' },
 
   { id: 'matrix', title: 'Matrix University',
     start: '2026-01-05T19:00', repeat: 'weekly',
@@ -34,7 +34,7 @@ window.IGNITE_EVENTS = [
   { id: 'her', title: 'IGNITEHer',
     start: '2026-01-06T19:00', repeat: 'weekly',
     featured: true, image: 'images/IgniteHer.webp',
-    link: 'https://ignite-church-445102.churchcenter.com/registrations/events/3504885' },
+    link: 'https://ignite-church-445102.churchcenter.com/groups/unique/igniteher-women-s-group-chat' },
 
   { id: '400m', title: "400M Men's Meeting",
     start: '2026-01-07T19:00', repeat: 'weekly',
