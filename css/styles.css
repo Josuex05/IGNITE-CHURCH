@@ -59,7 +59,7 @@ nav {
 /* Individual nav links */
 nav a {
   text-decoration: none; /* Removes underline */
-  color: #640404e0; /* Red color */
+  color: #8E7A38; /* Red color */
   padding: 8px 12px; /* Clickable space */
   border-radius: 6px; /* Rounded corners */
   font-weight: 500;
@@ -75,7 +75,7 @@ nav a:hover {
 ========================= */
 
 h1 {
-  color: #700000; /* Red heading */
+  color: #8E7A38; /* Red heading */
   margin: 1em 0; /* Space above and below */
 }
 
@@ -137,7 +137,7 @@ h2, h3 {
   'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 
   'Helvetica Neue', sans-serif
   h3 {
-    color: #700000; 
+    color: #8E7A38; 
   }
 }
 
@@ -266,7 +266,7 @@ right: 10px;
  padding: 5px 5px;
  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
  h1 {
- color: #7a0404;}
+ color: #8E7A38;}
 }
 
 .story-slider {
@@ -315,7 +315,7 @@ right: 10px;
   scroll-behavior: smooth;
   h2 {
     font-family: 'Courier New', Courier, monospace;
-    color: #7a0404;
+    color: #8E7A38;
   }
 }
 
@@ -482,7 +482,7 @@ img {
   position: absolute;
   z-index: 1;
   left: 30%; right: 30%; top: 15%; bottom: 10%;
-  background: radial-gradient(circle, #fff6c2 0%, #ffb02e 35%, #ff5a1f 70%, transparent 100%);
+  background: radial-gradient(circle, #fff6c2 0%, #E3D18F 35%, #C1A95C 70%, transparent 100%);
   border-radius: 50%;
   opacity: 0;
   filter: blur(3px);
@@ -520,19 +520,29 @@ img {
 }
 
 /* =========================================
-   DARK THEME (black + red)
-   Placed last so it overrides the light colors above
+   GOLD THEME (black + gold)
+   Main gold: #C1A95C. Change it here and the whole site follows.
+   Placed after the light styles so it overrides them
 ========================================= */
 
-:root { color-scheme: dark; }
+:root {
+  --gold:           #C1A95C;
+  --gold-rgb:       193, 169, 92;
+  --gold-light:     #E3D18F;      /* hover, headings, small accents */
+  --gold-light-rgb: 227, 209, 143;
+  --gold-pale:      #F4E9C0;      /* very light touches */
+  --gold-deep:      #8E7A38;      /* dark end of gold gradients */
+  --on-gold:        #1B1608;      /* text that sits on top of gold */
+  color-scheme: dark;
+}
 
-/* PAGE BACKGROUND: black with a red glow behind the content */
+/* PAGE BACKGROUND: black with a soft gold glow behind the content */
 body {
   color: #f2f2f2;
   background:
     radial-gradient(ellipse 70% 60% at 50% 38%,
-      rgba(190, 20, 30, 0.55) 0%,
-      rgba(90, 0, 8, 0.35) 40%,
+      rgba(var(--gold-rgb), 0.30) 0%,
+      rgba(90, 72, 20, 0.20) 40%,
       rgba(0, 0, 0, 0) 75%),
     #000;
   background-attachment: fixed;
@@ -553,19 +563,30 @@ nav a {
 }
 nav a:hover {
   background-color: rgba(255, 255, 255, 0.07);
-  border-bottom-color: #d0202a;
+  border-bottom-color: var(--gold);
 }
 hr { border-color: #2b2b2b; }
 
-/* LOGO: turn the dark letters white (flame circle stays red) */
+/* LOGO: letters turn white (the gold flame stays gold) */
 .animated-logo .logo-ignite,
 .animated-logo .logo-church {
   filter: brightness(0) invert(1);
 }
+/* the glow that lights up behind the flame */
+.fire-glow {
+  left: 14%; right: 14%; top: 8%; bottom: 8%;
+  background: radial-gradient(circle, rgba(var(--gold-rgb), 0.55) 0%, rgba(var(--gold-rgb), 0.28) 45%, rgba(var(--gold-rgb), 0) 75%);
+}
+/* softer than before so the gold flame stays crisp on top of its own glow */
+@keyframes glow-up { to { opacity: 0.9; } }
+@keyframes glow-flicker {
+  from { transform: scale(0.94); opacity: 0.55; }
+  to   { transform: scale(1.08); opacity: 0.9; }
+}
 
 /* HEADINGS */
-h1 { color: #ff4a4a; }
-.testimony-section h1 { color: #ff4a4a; }
+h1 { color: var(--gold-light); }
+.testimony-section h1 { color: var(--gold-light); }
 
 /* CARDS: dark glass look */
 .card {
@@ -585,13 +606,13 @@ h1 { color: #ff4a4a; }
   box-shadow: 0 6px 18px rgba(0, 0, 0, 0.6);
 }
 
-/* STORY CARDS (Our Story page) */
+/* STORY / TESTIMONIAL CARDS */
 .story-card {
   background: #1a1a1a;
   color: #f2f2f2;
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.7);
 }
-.story-content h2 { color: #ff4a4a; }
+.story-content h2 { color: var(--gold-light); }
 
 /* CONTACT FORM */
 .contact-form input,
@@ -600,6 +621,11 @@ h1 { color: #ff4a4a; }
   color: #fff;
   border: 1px solid #333;
 }
+.contact-form button {
+  background: var(--gold);
+  color: var(--on-gold);
+}
+.contact-form button:hover { background: var(--gold-light); }
 
 /* =========================================
    COMPACT HEADER
