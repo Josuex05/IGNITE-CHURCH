@@ -636,10 +636,10 @@ h1 { color: var(--gold-light); }
 }
 .logo img,
 .animated-logo .logo-part {
-  height: 34px;             /* was 50px: logo size */
+  height: 37px;             /* was 50px: logo size */
 }
 .logo-flame-wrap {
-  height: 34px;             /* keep the flame the same height as the logo */
+  height: 37px;             /* keep the flame the same height as the logo */
 }
 nav {
   gap: 14px;                /* was 25px */
@@ -710,3 +710,46 @@ body:has(.card-row) nav {
   .right .card,
   .mini-card { animation: none; }
 }
+
+/* ===== LOGO FIX START ===== */
+/* To make the whole logo bigger or smaller, change --d (the ring size). */
+.header .animated-logo { --d: 46px; align-items: center; justify-content: center; }
+
+/* letters: same height ratio as the original logo, centered on the ring */
+.header .animated-logo .logo-ignite,
+.header .animated-logo .logo-church { height: calc(var(--d) * 0.442); width: auto; }
+.header .animated-logo .logo-ignite { margin-right: calc(var(--d) * 0.08); }
+.header .animated-logo .logo-church { margin-left: calc(var(--d) * 0.08); }
+
+/* ring box */
+.header .logo-flame-wrap {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: var(--d);
+  height: var(--d);
+  flex: none;
+}
+/* flame centered inside the ring */
+.header .animated-logo .logo-flame { height: 81.6%; width: auto; }
+
+/* the white ring is drawn in CSS so it can never be cropped */
+.header .logo-flame-wrap::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  box-shadow: inset 0 0 0 calc(var(--d) * 0.035) #fff;
+  z-index: 3;
+  pointer-events: none;
+  opacity: 0;
+  transform: scale(0.4);
+  transform-origin: 50% 50%;
+  animation: flame-ignite 0.9s ease-out 1.3s forwards;
+}
+@media (prefers-reduced-motion: reduce) {
+  .header .logo-flame-wrap::before { animation: none; opacity: 1; transform: none; }
+}
+@media (max-width: 600px) { .header .animated-logo { --d: 40px; } }
+/* ===== LOGO FIX END ===== */
