@@ -3,37 +3,98 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>IGNITE CHURCH</title>
-    <meta name="description" content="This is the home page of MySite.">
-    <meta name="keywords" content="mysite, home, events, contact">
-   <link rel="stylesheet" href="css/styles.css">
+    <title>Give | Ignite Church</title>
+    <meta name="description" content="Give to Ignite Church: tithe, offering, or join the Founder's Club.">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/give.css">
 </head>
-<body>
-            <!-- HEADER -->
+<body class="give-page">
 
-
+    <!-- HEADER -->
     <header class="header">
-    
         <div class="header-inner">
-        
-            <!-- LOGO + TITLE + NAV -->
-        <a href="index.html" class="logo animated-logo" aria-label="Ignite Church home">
-    <img class="logo-part logo-ignite" src="images/logo-ignite.png" alt="">
-    <span class="logo-flame-wrap">
-        <span class="fire-glow"></span>
-        <img class="logo-part logo-flame" src="images/logo-flame.png" alt="">
-    </span>
-    <img class="logo-part logo-church" src="images/logo-church.png" alt="">
-</a>
+            <a href="index.html" class="logo animated-logo" aria-label="Ignite Church home">
+                <img class="logo-part logo-ignite" src="images/logo-ignite.png" alt="">
+                <span class="logo-flame-wrap">
+                    <span class="fire-glow"></span>
+                    <img class="logo-part logo-flame" src="images/logo-flame.png" alt="">
+                </span>
+                <img class="logo-part logo-church" src="images/logo-church.png" alt="">
+            </a>
         </div>
         <nav>
             <a href="index.html">WELCOME HOME</a>
-            <a href="our_story.html">OUR STORY</a>
+            <a href="our_story.html">TESTIMONIALS</a>
             <a href="https://www.youtube.com/channel/UCFl2bnOp90kRWOCKWNEsYvA" target="_blank">LIVESTREAM</a>
             <a href="events.html">EVENTS</a>
             <a href="give.html">GIVE</a>
             <a href="contact.html">CONTACT US</a>
         </nav>
-      
-          <hr>
+        <hr>
     </header>
+
+    <main class="give-main">
+
+        <div class="gv-head">
+            <h1>Give</h1>
+            <p>Choose a bubble to learn more, then give securely through Zeffy.</p>
+        </div>
+
+        <div class="gv-layout">
+
+            <!-- BUBBLES ------------------------------------------------
+                 To edit a description or link, change the data-desc /
+                 data-ref text or the href below. Order matters: keep
+                 Tithe, Offering, Founder's Club in this order.
+            ------------------------------------------------------------>
+            <div class="gv-stage" id="gvStage">
+
+                <div class="bubble" data-name="Tithe" data-ref="Malachi 3:10"
+                     data-desc="The tithe is the first tenth of what God has given us, returned to Him in faith. It supports the ongoing work of Ignite Church: our services, our ministries, and our care for the people of Newark.">
+                    <div class="bubble-pop"><div class="bubble-float">
+                        <a href="https://www.zeffy.com/en-US/donation-form/tithe-59" target="_blank" rel="noopener">
+                            <span class="b-label">TITHE</span>
+                            <span class="b-hint">GIVE NOW &rsaquo;</span>
+                        </a>
+                    </div></div>
+                </div>
+
+                <div class="bubble" data-name="Offering" data-ref="2 Corinthians 9:7"
+                     data-desc="An offering is a gift given freely, above the tithe, from a grateful heart. Give toward a special need, an outreach, or whatever God puts on your heart.">
+                    <div class="bubble-pop"><div class="bubble-float">
+                        <a href="https://www.zeffy.com/en-US/donation-form/offering-78" target="_blank" rel="noopener">
+                            <span class="b-label">OFFERING</span>
+                            <span class="b-hint">GIVE NOW &rsaquo;</span>
+                        </a>
+                    </div></div>
+                </div>
+
+                <div class="bubble" data-name="Founder's Club" data-ref=""
+                     data-desc="A way to partner with Ignite Church and help build what God is doing here. Join the Founder's Club and stand with us for the long run.">
+                    <div class="bubble-pop"><div class="bubble-float">
+                        <a href="https://www.zeffy.com/en-US/donation-form/founders-club-3" target="_blank" rel="noopener">
+                            <span class="b-label">FOUNDER'S CLUB</span>
+                            <span class="b-hint">GIVE NOW &rsaquo;</span>
+                        </a>
+                    </div></div>
+                </div>
+
+            </div>
+
+            <!-- DESCRIPTION PANEL -->
+            <aside class="gv-panel" aria-labelledby="gvName">
+                <p class="gv-tag">WAYS TO GIVE</p>
+                <h2 id="gvName">Offering</h2>
+                <p class="gv-ref" id="gvRef"></p>
+                <p class="gv-text" id="gvText" aria-hidden="true"><span class="gv-typed" id="gvTyped"></span><span class="gv-ghost" id="gvGhost"></span></p>
+                <p class="gv-sr" id="gvSr" aria-live="polite"></p>
+                <a class="gv-btn" id="gvBtn" href="https://www.zeffy.com/en-US/donation-form/offering-78" target="_blank" rel="noopener">GIVE NOW</a>
+                <p class="gv-small">Opens Zeffy in a new tab.</p>
+            </aside>
+
+        </div>
+    </main>
+
+    <script src="js/give.js"></script>
+</body>
+</html>

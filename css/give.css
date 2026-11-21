@@ -1,0 +1,258 @@
+/* =========================================================
+   GIVE PAGE  (loads after styles.css)
+   Floating glass bubbles + typewriter description
+========================================================= */
+
+.give-main {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 22px 24px 70px;
+}
+
+/* ---------- heading ---------- */
+.gv-head { text-align: center; margin-bottom: 8px; }
+.gv-head h1 {
+  margin: 0;
+  font-size: clamp(2rem, 4.2vw, 3rem);
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: #fff;
+}
+.gv-head p { margin-top: 6px; color: rgba(255, 255, 255, 0.65); font-size: 0.95rem; }
+
+.gv-layout {
+  display: grid;
+  grid-template-columns: 1.35fr 1fr;
+  gap: 28px;
+  align-items: center;
+}
+
+/* ---------- stage ---------- */
+.gv-stage {
+  position: relative;
+  width: 100%;
+  max-width: 680px;
+  margin: 0 auto;
+  aspect-ratio: 1 / 0.95;
+}
+
+/* positioned bubble: size and place come from its "slot" */
+.bubble {
+  position: absolute;
+  aspect-ratio: 1;
+  container-type: inline-size;
+  transition:
+    left  0.95s cubic-bezier(0.55, 0, 0.2, 1),
+    top   0.95s cubic-bezier(0.55, 0, 0.2, 1),
+    width 0.95s cubic-bezier(0.55, 0, 0.2, 1);
+}
+.bubble.slot-0 { left: 38%; top: 28%; width: 58%; z-index: 3; }
+.bubble.slot-1 { left: 2%;  top: 0;   width: 40%; z-index: 2; }
+.bubble.slot-2 { left: 8%;  top: 66%; width: 30%; z-index: 1; }
+
+/* layer 1: entrance pop. layer 2: endless float */
+.bubble-pop, .bubble-float { width: 100%; height: 100%; }
+.bubble-pop { animation: gv-pop 0.9s cubic-bezier(0.2, 1.3, 0.3, 1) backwards; }
+.bubble:nth-child(1) .bubble-pop { animation-delay: 0.45s; }
+.bubble:nth-child(2) .bubble-pop { animation-delay: 0.65s; }
+.bubble:nth-child(3) .bubble-pop { animation-delay: 0.85s; }
+
+.bubble-float { animation: gv-float var(--dur, 7s) ease-in-out var(--delay, 0s) infinite alternate; }
+.bubble:nth-child(1) .bubble-float { --dur: 7s;   --delay: -1s;   --dx: 8px;  --dy: -14px; }
+.bubble:nth-child(2) .bubble-float { --dur: 8.5s; --delay: -3s;   --dx: -9px; --dy: -12px; }
+.bubble:nth-child(3) .bubble-float { --dur: 6s;   --delay: -2s;   --dx: 6px;  --dy: -16px; }
+
+@keyframes gv-pop {
+  from { opacity: 0; transform: scale(0.2); }
+  to   { opacity: 1; transform: scale(1); }
+}
+@keyframes gv-float {
+  from { transform: translate(0, 0); }
+  to   { transform: translate(var(--dx, 6px), var(--dy, -14px)); }
+}
+
+/* ---------- the glass bubble ---------- */
+.bubble a {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2.5cqw;
+  width: 100%;
+  height: 100%;
+  padding: 12%;
+  box-sizing: border-box;
+  border-radius: 50%;
+  color: #fff;
+  text-align: center;
+  text-decoration: none;
+  background:
+    radial-gradient(circle at 32% 24%, rgba(255, 255, 255, 0.30) 0%, rgba(255, 255, 255, 0.07) 34%, rgba(255, 255, 255, 0) 55%),
+    radial-gradient(circle at 70% 82%, rgba(255, 70, 80, 0.38) 0%, rgba(190, 20, 30, 0.14) 45%, rgba(190, 20, 30, 0.05) 70%),
+    rgba(255, 255, 255, 0.04);
+  -webkit-backdrop-filter: blur(6px);
+  backdrop-filter: blur(6px);
+  border: 1px solid rgba(255, 255, 255, 0.28);
+  box-shadow:
+    inset 0 0 6cqw rgba(255, 255, 255, 0.16),
+    inset -5cqw -7cqw 12cqw rgba(190, 20, 30, 0.30),
+    0 0 4cqw rgba(190, 20, 30, 0.30),
+    0 2.5cqw 7cqw rgba(0, 0, 0, 0.65);
+  transition: transform 0.35s ease, box-shadow 0.5s ease, border-color 0.5s ease;
+}
+/* shine marks, like the sketch */
+.bubble a::before {
+  content: "";
+  position: absolute;
+  top: 8%; left: 15%;
+  width: 36%; height: 17%;
+  border-radius: 50%;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.70), rgba(255, 255, 255, 0.04));
+  transform: rotate(-30deg);
+  filter: blur(0.6px);
+  pointer-events: none;
+}
+.bubble a::after {
+  content: "";
+  position: absolute;
+  top: 6.5%; left: 56%;
+  width: 11%; height: 6%;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.60);
+  transform: rotate(-12deg);
+  pointer-events: none;
+}
+
+.b-label {
+  font-size: 10.5cqw;
+  font-weight: 800;
+  line-height: 1.05;
+  letter-spacing: 0.07em;
+  text-shadow: 0 2px 14px rgba(0, 0, 0, 0.55);
+}
+.b-hint {
+  font-size: 4.4cqw;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  color: #ffd0d0;
+  opacity: 0;
+  transform: translateY(6px);
+  transition: opacity 0.4s ease 0.4s, transform 0.4s ease 0.4s;
+}
+
+/* the bubble in front */
+.bubble.slot-0 a {
+  border-color: rgba(255, 130, 130, 0.65);
+  box-shadow:
+    inset 0 0 7cqw rgba(255, 255, 255, 0.20),
+    inset -5cqw -7cqw 12cqw rgba(210, 30, 40, 0.42),
+    0 0 7cqw rgba(235, 50, 60, 0.55),
+    0 3cqw 8cqw rgba(0, 0, 0, 0.7);
+}
+.bubble.slot-0 .b-hint { opacity: 1; transform: none; }
+
+/* bubbles behind: invite a click */
+.bubble:not(.slot-0) a:hover,
+.bubble:not(.slot-0) a:focus-visible { transform: scale(1.06); border-color: rgba(255, 130, 130, 0.6); }
+.bubble.slot-0 a:hover { transform: scale(1.02); }
+.bubble a:focus-visible { outline: 2px solid #fff; outline-offset: 4px; }
+
+/* ---------- description panel ---------- */
+.gv-panel {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 8px;
+  min-height: 380px;
+  padding: 34px 32px 30px;
+  overflow: hidden;
+  border-radius: 16px;
+  background: linear-gradient(145deg, rgba(255, 255, 255, 0.10), rgba(255, 255, 255, 0.03));
+  -webkit-backdrop-filter: blur(14px);
+  backdrop-filter: blur(14px);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.65), inset 0 1px 0 rgba(255, 255, 255, 0.14);
+  color: #fff;
+  animation: gv-panel-in 0.9s cubic-bezier(0.2, 0.8, 0.2, 1) 0.6s backwards;
+}
+.gv-panel > * { position: relative; }
+.gv-tag { font-size: 0.72rem; font-weight: 700; letter-spacing: 0.16em; color: #ff6a6a; }
+.gv-panel h2 { margin: 0; font-size: clamp(1.7rem, 3vw, 2.3rem); line-height: 1.1; color: #fff; }
+.gv-ref { font-size: 0.85rem; font-style: italic; color: rgba(255, 255, 255, 0.6); }
+.gv-text {
+  flex: 1;
+  margin: 10px 0 14px;
+  font-size: 1.02rem;
+  line-height: 1.65;
+  color: rgba(255, 255, 255, 0.88);
+}
+.gv-ghost { visibility: hidden; }
+.gv-typed::after {
+  content: "";
+  display: inline-block;
+  width: 2px; height: 1.05em;
+  margin-left: 2px;
+  vertical-align: -0.15em;
+  background: #ff6a6a;
+  animation: gv-blink 1s steps(1) infinite;
+}
+.gv-text.done .gv-typed::after { display: none; }
+@keyframes gv-blink { 50% { opacity: 0; } }
+@keyframes gv-panel-in { from { opacity: 0; transform: translateX(80px); } to { opacity: 1; transform: none; } }
+
+.gv-sr {
+  position: absolute !important;
+  width: 1px; height: 1px;
+  margin: -1px; padding: 0;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
+.gv-btn {
+  display: inline-block;
+  padding: 13px 30px;
+  font-size: 0.88rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: #fff;
+  text-decoration: none;
+  background: linear-gradient(135deg, #e0252f, #a30f19);
+  border: 1px solid rgba(255, 120, 120, 0.5);
+  border-radius: 10px;
+  box-shadow: 0 0 24px rgba(220, 40, 50, 0.45);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.gv-btn:hover, .gv-btn:focus-visible { transform: translateY(-2px); box-shadow: 0 0 34px rgba(255, 60, 70, 0.75); }
+.gv-small { font-size: 0.78rem; color: rgba(255, 255, 255, 0.5); }
+
+/* page-load slide for header text and nav */
+@keyframes gv-in-top { from { opacity: 0; transform: translateY(-26px); } to { opacity: 1; transform: none; } }
+body.give-page nav { animation: gv-in-top 0.7s ease-out 0.2s backwards; }
+.gv-head { animation: gv-in-top 0.7s ease-out 0.3s backwards; }
+
+/* ---------- tablets and phones ---------- */
+@media (max-width: 900px) {
+  .gv-layout { grid-template-columns: 1fr; gap: 18px; }
+  .gv-stage { max-width: 540px; }
+  .gv-panel { min-height: 0; }
+}
+@media (max-width: 520px) {
+  .give-main { padding: 16px 12px 52px; }
+  .gv-stage { aspect-ratio: 1 / 1.12; margin-top: 22px; }
+  .bubble.slot-0 { left: 36%; top: 30%; width: 62%; }
+  .bubble.slot-1 { left: 0;   top: 0;   width: 42%; }
+  .bubble.slot-2 { left: 4%;  top: 67%; width: 36%; }
+  .b-label { font-size: 11cqw; }
+  .gv-panel { padding: 26px 22px 24px; }
+  .gv-btn { width: 100%; text-align: center; }
+}
+
+/* ---------- respect "reduce motion" ---------- */
+@media (prefers-reduced-motion: reduce) {
+  .bubble-pop, .bubble-float, .gv-panel, .gv-head, body.give-page nav { animation: none; }
+  .bubble { transition: none; }
+  .gv-typed::after { animation: none; }
+}
