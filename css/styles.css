@@ -761,3 +761,22 @@ body:has(.card-row) nav {
 body, button, input, textarea, select, nav a { font-family: var(--font); }
 body { -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
 /* ===== FONT END ===== */
+
+/* ===== TESTIMONIALS FONT START ===== */
+/* Testimonials page: Antonio headings + DM Sans text. */
+.testimony-section { font-family: "DM Sans", system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif; }
+.testimony-section .story-content { font-family: "DM Sans", system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif; }
+.testimony-section h1,
+.testimony-section .story-content h2,
+.testimony-section .story-content h3 {
+  font-family: "Antonio", "DM Sans", system-ui, sans-serif;
+  text-transform: uppercase;
+}
+.testimony-section h1 { font-weight: 600; font-size: clamp(2.4rem, 5vw, 3.4rem); letter-spacing: .14em; }
+.testimony-section .story-content h2 { font-weight: 600; font-size: 1.9rem; letter-spacing: .06em; margin: .15em 0 .1em; }
+.testimony-section .story-content h3 { font-weight: 500; font-size: 1.05rem; letter-spacing: .2em; margin: 0 0 .6em; color: var(--gold); }
+/* a little extra card height so the text is never cut off at the bottom */
+.testimony-section .card-stack { height: 660px; }
+.testimony-section .story-content { padding: 12px 16px 18px; }
+@media (max-width: 640px) { .testimony-section .card-stack { height: 860px; } }
+/* ===== TESTIMONIALS FONT END ===== */
