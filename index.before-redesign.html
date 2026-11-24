@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IGNITE CHURCH</title>
+    <meta name="description" content="This is the home page of MySite.">
+    <meta name="keywords" content="mysite, home, events, contact">
+   <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <header class="header">
+    
+        <div class="header-inner">
+        
+            <!-- LOGO + TITLE + NAV -->
+       <a href="index.html" class="logo animated-logo" aria-label="Ignite Church home">
+    <img class="logo-part logo-ignite" src="images/logo-ignite.png" alt="">
+    <span class="logo-flame-wrap">
+        <span class="fire-glow"></span>
+        <img class="logo-part logo-flame" src="images/logo-flame.png" alt="">
+    </span>
+    <img class="logo-part logo-church" src="images/logo-church.png" alt="">
+</a>
+
+        </div>
+        <nav>
+            <a href="index.html">WELCOME HOME</a>
+            <a href="our_story.html">TESTIMONIALS</a>
+            <a href="https://www.youtube.com/channel/UCFl2bnOp90kRWOCKWNEsYvA" target="_blank">LIVESTREAM</a>
+            <a href="events.html">EVENTS</a>
+            <a href="give.html">GIVE</a>
+            <a href="contact.html">CONTACT US</a>
+        </nav>
+      
+          <hr>
+    </header>
+
+<main class="container">
+       <!--LEFT COLUMN-->
+
+<div class="grid">
+<div class="left">
+
+            <section class="card">
+          <h3>Welcome Home</h3>
+          <p>At Ignite we like to say "Welcome Home"!
+            We seek to encounter the presence of Jesus.
+            We strive to know the person of Jesus.</p>
+        </section>
+
+        <section class="card">
+          <h3>Time + Location</h3>
+          <p>Sunday's at 10:30 am  |   
+        7 Bond St, Newark, NJ 07103 | 
+        Parking Lot: 319 New St, Newark, NJ 07103 </p>
+        </section>
+
+        <section class="card">
+          <h3>Stay Connected</h3>
+          <p>Not able to come to Ignite?  No worries!
+    Watch our live services on our Youtube page.
+    Click below to keep up with the Ignite fam.</p>
+          <div class="icons">
+      
+      <!-- FB -->
+      <a href="https://www.facebook.com/ignitec2015/" target="_blank">
+      <img src="images/facebook.png" alt="Facebook"> </a>
+                
+      <!-- YT -->
+      <a href="https://www.youtube.com/channel/UCFl2bnOp90kRWOCKWNEsYvA" target="_blank">
+      <img src="images/youtube.webp" alt="YouTube">
+    </a>
+      <!-- IG -->
+    <a href="https://www.instagram.com/ignitechurchnj/" target="_blank">
+      <img src="images/Instagram.png" alt="Instagram">
+
+    </a>
+        </section>
+</div>
+      <!-- RIGHT COLUMN -->
+       <!--CAROUSEL-->
+<div class="right">
+          <section class="card large">
+            <div class="carousel">
+              <div class="slides">
+                <img src="images/pastor_carousel.png" class="slide active">
+                <img src="images/carousel 2.png" class="slide">
+                <img src="images/carousel 3.png" class="slide">
+              </div>
+              <button class="prev">&#10094;</button>
+              <button class="next">&#10095;</button>
+            </div>
+          </section>
+          
+<!--MINI CARDS-->
+
+      </div> </div> <div class="card-row">
+      <a href="https://www.thehubnewark.org/" target="_blank" class="mini-card">
+        <img src="images/theHUB.webp">
+        <div class="overlay">THE HUB</div>
+      </a>
+
+      <a href="https://www.matrixuniversity.online/" target="_blank" class="mini-card">
+        <img src="images/MATRIXU.webp">
+        <div class="overlay">MATRIX UNIVERSITY</div>
+      </a>
+      
+      <a href="https://ignite-church-445102.churchcenter.com/registrations/events/2549312" target="_blank" class="mini-card">
+        <img src="images/400M.webp">
+        <div class="overlay">400M</div>
+      </a>
+
+      <a href="https://ignite-church-445102.churchcenter.com/groups/unique/igniteher-women-s-group-chat" target="_blank" class="mini-card">
+        <img src="images/IgniteHer.webp">
+        <div class="overlay">IGNITEHer</div>
+      </a> 
+    </div>
+  </main>
+
+  <script>
+let index=0;
+const slides = document.querySelectorAll(".slide");
+
+function showSlide(i) {
+  slides.forEach(slide => slide.classList.remove("active"));
+  slides[i].classList.add("active");
+}
+
+document.querySelector(".next").onclick = () => {
+  index =(index + 1) % slides.length;
+  showSlide(index);
+};
+
+document.querySelector(".prev").onclick = () => {
+  index = (index - 1 + slides.length) % slides.length
+  showSlide(index);
+};
+</script>
+</body>
+</html>

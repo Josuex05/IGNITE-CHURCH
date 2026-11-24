@@ -3,139 +3,106 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>IGNITE CHURCH</title>
-    <meta name="description" content="This is the home page of MySite.">
-    <meta name="keywords" content="mysite, home, events, contact">
-   <link rel="stylesheet" href="css/styles.css">
+    <title>Ignite Church | Welcome Home</title>
+    <meta name="description" content="Ignite Church in Newark, NJ. Join us Sundays at 10:30am. We seek to encounter the presence of Jesus and know him more.">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/home.css">
 </head>
 <body>
     <header class="header">
-    
         <div class="header-inner">
-        
-            <!-- LOGO + TITLE + NAV -->
-       <a href="index.html" class="logo animated-logo" aria-label="Ignite Church home">
-    <img class="logo-part logo-ignite" src="images/logo-ignite.png" alt="">
-    <span class="logo-flame-wrap">
-        <span class="fire-glow"></span>
-        <img class="logo-part logo-flame" src="images/logo-flame.png" alt="">
-    </span>
-    <img class="logo-part logo-church" src="images/logo-church.png" alt="">
-</a>
-
+            <!-- LOGO -->
+            <a href="index.html" class="logo animated-logo"><img class="logo-part logo-ignite" src="images/logo-ignite.png" alt=""><span class="logo-flame-wrap"><span class="fire-glow"></span><img class="logo-part logo-flame" src="images/logo-flame.png" alt=""></span><img class="logo-part logo-church" src="images/logo-church.png" alt=""></a>
         </div>
         <nav>
             <a href="index.html">WELCOME HOME</a>
             <a href="our_story.html">TESTIMONIALS</a>
-            <a href="https://www.youtube.com/channel/UCFl2bnOp90kRWOCKWNEsYvA" target="_blank">LIVESTREAM</a>
             <a href="events.html">EVENTS</a>
             <a href="give.html">GIVE</a>
             <a href="contact.html">CONTACT US</a>
         </nav>
-      
-          <hr>
+        <hr>
     </header>
 
-<main class="container">
-       <!--LEFT COLUMN-->
+    <main class="hp">
 
-<div class="grid">
-<div class="left">
+        <!-- LEFT: Location / Stay Connected / Daily verse -->
+        <div class="hp-col hp-left">
 
-            <section class="card">
-          <h3>Welcome Home</h3>
-          <p>At Ignite we like to say "Welcome Home"!
-            We seek to encounter the presence of Jesus.
-            We strive to know the person of Jesus.</p>
-        </section>
+            <section class="hp-tab hp-loc">
+                <h2 class="hp-label">Location</h2>
+                <p class="hp-text">Upper Level<br>1100 McCarter Hwy<br>Newark, NJ 07102</p>
+                <a class="hp-chip" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&amp;query=1100+McCarter+Hwy+Newark+NJ+07102">Get directions &rarr;</a>
+            </section>
 
-        <section class="card">
-          <h3>Time + Location</h3>
-          <p>Sunday's at 10:30 am  |   
-        7 Bond St, Newark, NJ 07103 | 
-        Parking Lot: 319 New St, Newark, NJ 07103 </p>
-        </section>
+            <section class="hp-tab hp-social">
+                <h2 class="hp-label">Stay Connected</h2>
+                <div class="hp-icons">
+                    <a href="https://www.facebook.com/ignitec2015/" target="_blank" rel="noopener" aria-label="Ignite Church on Facebook">
+                        <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M13.5 21v-8h2.7l.4-3.2h-3.1V7.9c0-.9.3-1.5 1.6-1.5h1.7V3.5c-.3 0-1.3-.1-2.4-.1-2.4 0-4.1 1.5-4.1 4.2v2.2H7.6V13h2.7v8h3.2z"/></svg>
+                    </a>
+                    <a href="https://www.youtube.com/channel/UCFl2bnOp90kRWOCKWNEsYvA" target="_blank" rel="noopener" aria-label="Ignite Church on YouTube">
+                        <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2.5" y="5.5" width="19" height="13" rx="4" fill="none" stroke="currentColor" stroke-width="1.7"/><path fill="currentColor" d="M10 9.2v5.6l5-2.8z"/></svg>
+                    </a>
+                    <a href="https://www.instagram.com/ignitechurchnj/" target="_blank" rel="noopener" aria-label="Ignite Church on Instagram">
+                        <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="3.5" width="17" height="17" rx="5" fill="none" stroke="currentColor" stroke-width="1.7"/><circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="1.7"/><circle cx="17.2" cy="6.8" r="1.1" fill="currentColor"/></svg>
+                    </a>
+                </div>
+            </section>
 
-        <section class="card">
-          <h3>Stay Connected</h3>
-          <p>Not able to come to Ignite?  No worries!
-    Watch our live services on our Youtube page.
-    Click below to keep up with the Ignite fam.</p>
-          <div class="icons">
-      
-      <!-- FB -->
-      <a href="https://www.facebook.com/ignitec2015/" target="_blank">
-      <img src="images/facebook.png" alt="Facebook"> </a>
-                
-      <!-- YT -->
-      <a href="https://www.youtube.com/channel/UCFl2bnOp90kRWOCKWNEsYvA" target="_blank">
-      <img src="images/youtube.webp" alt="YouTube">
-    </a>
-      <!-- IG -->
-    <a href="https://www.instagram.com/ignitechurchnj/" target="_blank">
-      <img src="images/Instagram.png" alt="Instagram">
+            <section class="hp-tab hp-verse" aria-label="Daily Bible verse">
+                <h2 class="hp-label">Daily Verse</h2>
+                <figure class="hp-verse-text" id="verseText"></figure>
+            </section>
 
-    </a>
-        </section>
-</div>
-      <!-- RIGHT COLUMN -->
-       <!--CAROUSEL-->
-<div class="right">
-          <section class="card large">
-            <div class="carousel">
-              <div class="slides">
-                <img src="images/pastor_carousel.png" class="slide active">
-                <img src="images/carousel 2.png" class="slide">
-                <img src="images/carousel 3.png" class="slide">
-              </div>
-              <button class="prev">&#10094;</button>
-              <button class="next">&#10095;</button>
+        </div>
+
+        <!-- CENTER: Welcome + flame + livestream -->
+        <div class="hp-col hp-center">
+            <div class="hp-head">
+                <h1>Welcome Home</h1>
+                <p>We seek to encounter the presence of Jesus and know him more</p>
             </div>
-          </section>
-          
-<!--MINI CARDS-->
 
-      </div> </div> <div class="card-row">
-      <a href="https://www.thehubnewark.org/" target="_blank" class="mini-card">
-        <img src="images/theHUB.webp">
-        <div class="overlay">THE HUB</div>
-      </a>
+            <div class="hp-flame" role="img" aria-label="Ignite Church flame">
+                <svg viewBox="0 0 48 72" aria-hidden="true" focusable="false">
+                    <defs>
+                        <linearGradient id="flameGold" x1="0" y1="0" x2="0" y2="1">
+                            <stop offset="0" stop-color="#F4E9C0"/>
+                            <stop offset="0.35" stop-color="#E3D18F"/>
+                            <stop offset="0.75" stop-color="#C1A95C"/>
+                            <stop offset="1" stop-color="#8E7A38"/>
+                        </linearGradient>
+                    </defs>
+                    <path class="f f-a" fill="url(#flameGold)" d="M31.8,2.8C31.5,2.7 31.4,2.7 31.2,2.8C31.0,2.9 31.0,2.4 30.6,3.4C30.3,4.3 29.7,7.0 28.9,8.5C28.2,10.0 27.0,11.2 26.1,12.4C25.1,13.5 25.5,13.2 23.1,15.4C20.7,17.5 14.2,22.7 11.6,25.2C8.9,27.7 8.4,28.5 7.1,30.2C5.8,32.0 4.6,33.9 3.8,35.7C2.9,37.5 2.3,38.6 1.9,40.9C1.6,43.3 1.5,47.2 1.8,49.9C2.1,52.6 3.2,55.1 3.9,57.0C4.7,58.9 5.5,59.8 6.4,61.1C7.2,62.4 7.9,63.5 9.2,64.8C10.5,66.1 13.0,68.0 14.1,68.9C15.3,69.7 15.7,69.8 16.1,69.9C16.6,70.1 16.9,70.0 17.1,69.9C17.3,69.7 17.7,69.5 17.3,68.9C16.9,68.2 15.6,67.0 14.9,66.0C14.1,65.0 13.5,64.3 12.7,62.6C12.0,61.0 10.8,57.9 10.3,56.1C9.8,54.2 9.9,53.2 9.9,51.5C9.9,49.8 9.8,47.7 10.2,45.7C10.7,43.8 11.8,41.5 12.6,39.7C13.5,38.0 14.4,36.8 15.6,35.3C16.8,33.8 18.2,32.4 19.9,30.9C21.5,29.3 24.0,27.5 25.7,26.0C27.4,24.5 28.9,23.1 30.1,21.8C31.2,20.5 32.0,19.3 32.6,18.1C33.3,16.9 33.7,16.0 33.9,14.6C34.2,13.3 34.3,11.6 34.3,10.1C34.2,8.7 33.8,6.9 33.6,5.8C33.3,4.7 32.9,4.1 32.6,3.6C32.3,3.1 32.0,2.9 31.8,2.8Z"/>
+                    <path class="f f-b" fill="url(#flameGold)" d="M35.1,22.9C34.9,22.8 34.6,22.9 34.1,23.2C33.5,23.5 32.9,23.8 31.9,24.8C30.9,25.8 29.0,27.8 28.0,29.1C27.0,30.4 26.5,31.2 26.0,32.5C25.5,33.8 25.0,35.3 24.8,36.7C24.6,38.1 24.7,39.6 24.9,40.9C25.2,42.2 25.8,43.5 26.4,44.5C26.9,45.5 26.9,45.6 28.4,47.1C29.8,48.6 33.5,51.9 34.9,53.5C36.3,55.1 36.4,55.3 36.6,56.9C36.9,58.4 36.8,61.3 36.6,62.8C36.4,64.2 36.0,64.6 35.4,65.6C34.9,66.6 33.7,68.2 33.4,68.8C33.0,69.4 33.2,69.2 33.3,69.4C33.3,69.6 33.4,69.8 33.7,69.9C34.0,69.9 34.4,69.9 34.9,69.7C35.5,69.5 36.2,69.1 37.0,68.6C37.8,68.0 39.1,67.2 39.9,66.5C40.7,65.8 40.9,65.7 41.8,64.6C42.6,63.5 44.2,61.4 44.9,59.9C45.7,58.4 46.0,56.9 46.1,55.5C46.3,54.1 46.2,52.8 45.9,51.5C45.6,50.2 45.0,49.0 44.4,47.9C43.8,46.8 43.6,46.5 42.3,45.0C41.0,43.5 37.9,40.7 36.6,39.0C35.2,37.3 34.8,36.4 34.4,35.1C33.9,33.7 33.7,32.1 33.6,30.9C33.6,29.6 33.9,28.5 34.2,27.4C34.5,26.2 35.5,24.5 35.6,23.7C35.8,23.0 35.4,23.0 35.1,22.9Z"/>
+                </svg>
+            </div>
 
-      <a href="https://www.matrixuniversity.online/" target="_blank" class="mini-card">
-        <img src="images/MATRIXU.webp">
-        <div class="overlay">MATRIX UNIVERSITY</div>
-      </a>
-      
-      <a href="https://ignite-church-445102.churchcenter.com/registrations/events/2549312" target="_blank" class="mini-card">
-        <img src="images/400M.webp">
-        <div class="overlay">400M</div>
-      </a>
+            <div class="hp-bottom">
+                <p class="hp-time">Sundays at 10:30am</p>
+                <a class="hp-live" href="https://www.youtube.com/channel/UCFl2bnOp90kRWOCKWNEsYvA" target="_blank" rel="noopener"><span class="hp-dot"></span>LIVESTREAM</a>
+            </div>
+        </div>
 
-      <a href="https://ignite-church-445102.churchcenter.com/groups/unique/igniteher-women-s-group-chat" target="_blank" class="mini-card">
-        <img src="images/IgniteHer.webp">
-        <div class="overlay">IGNITEHer</div>
-      </a> 
-    </div>
-  </main>
+        <!-- RIGHT: Programs -->
+        <div class="hp-col hp-right">
+            <a class="hp-tab hp-prog" target="_blank" rel="noopener" href="https://www.matrixuniversity.online/">
+                <span class="hp-name">MATRIX</span>
+                <span class="hp-sub">University &middot; Mondays 7pm</span>
+            </a>
+            <a class="hp-tab hp-prog" target="_blank" rel="noopener" href="https://ignite-church-445102.churchcenter.com/groups/unique/igniteher-women-s-group-chat">
+                <span class="hp-name">IGNITE<span class="her">her</span></span>
+                <span class="hp-sub">Women&rsquo;s group &middot; Tuesdays 7pm</span>
+            </a>
+            <a class="hp-tab hp-prog" target="_blank" rel="noopener" href="https://ignite-church-445102.churchcenter.com/registrations/events/2549312">
+                <span class="hp-name">400M</span>
+                <span class="hp-sub">Men&rsquo;s meeting &middot; Wednesdays 7pm</span>
+            </a>
+        </div>
 
-  <script>
-let index=0;
-const slides = document.querySelectorAll(".slide");
+    </main>
 
-function showSlide(i) {
-  slides.forEach(slide => slide.classList.remove("active"));
-  slides[i].classList.add("active");
-}
-
-document.querySelector(".next").onclick = () => {
-  index =(index + 1) % slides.length;
-  showSlide(index);
-};
-
-document.querySelector(".prev").onclick = () => {
-  index = (index - 1 + slides.length) % slides.length
-  showSlide(index);
-};
-</script>
+    <script src="js/home.js"></script>
 </body>
 </html>
