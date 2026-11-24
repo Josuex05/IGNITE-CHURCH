@@ -753,3 +753,11 @@ body:has(.card-row) nav {
 }
 @media (max-width: 600px) { .header .animated-logo { --d: 40px; } }
 /* ===== LOGO FIX END ===== */
+
+/* ===== FONT START ===== */
+/* Site-wide font. To try another Google font, change the name here
+   and in the <link> tag in each page's <head>. */
+:root { --font: "DM Sans", system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif; }
+body, button, input, textarea, select, nav a { font-family: var(--font); }
+body { -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+/* ===== FONT END ===== */

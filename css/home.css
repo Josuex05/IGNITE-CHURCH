@@ -264,3 +264,12 @@
   .hp-live { padding: 12px 34px; letter-spacing: .2em; }
   .hp-left, .hp-right { --curve: 44px; }
 }
+
+/* ===== DISPLAY FONT START ===== */
+/* Antonio: slim headings (WELCOME HOME, tab titles, MATRIX / IGNITEher / 400M).
+   To change the look, edit the sizes and weights below. */
+:root { --display: "Antonio", "DM Sans", system-ui, sans-serif; }
+.hp-head h1 { font-family: var(--display); font-weight: 500; font-size: clamp(2rem, 3vw, 2.8rem); letter-spacing: .1em; }
+.hp-label    { font-family: var(--display); font-weight: 600; font-size: 1.15rem; letter-spacing: .2em; }
+.hp-name     { font-family: var(--display); font-weight: 600; font-size: clamp(2.2rem, 3.2vw, 3rem); letter-spacing: .08em; }
+/* ===== DISPLAY FONT END ===== */
