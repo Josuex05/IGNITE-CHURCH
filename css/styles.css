@@ -784,3 +784,7 @@ body { -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; 
 /* ===== TESTIMONIAL PHOTOS START ===== */
 .story-card img[src*="jorge_caban"], .story-card img[src*="mike_sunbary"] { object-position: 50% 12%; }
 /* ===== TESTIMONIAL PHOTOS END ===== */
+
+/* ===== TESTIMONIAL SPACING START ===== */
+.testimony-section .story-content h2 + p { margin-top: .8em; }
+/* ===== TESTIMONIAL SPACING END ===== */
