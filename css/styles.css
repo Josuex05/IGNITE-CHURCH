@@ -780,3 +780,7 @@ body { -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; 
 .testimony-section .story-content { padding: 12px 16px 18px; }
 @media (max-width: 640px) { .testimony-section .card-stack { height: 860px; } }
 /* ===== TESTIMONIALS FONT END ===== */
+
+/* ===== TESTIMONIAL PHOTOS START ===== */
+.story-card img[src*="jorge_caban"], .story-card img[src*="mike_sunbary"] { object-position: 50% 12%; }
+/* ===== TESTIMONIAL PHOTOS END ===== */
